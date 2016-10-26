@@ -23,9 +23,8 @@ export default {
       .end((err, res) => {
         if (err) {
           console.log('Connection Error!')
-          return []
         } else {
-          return res.body
+          this.abyatArray = res.body
         }
       })
     }
@@ -43,8 +42,13 @@ export default {
     '$route' (to, from) {
       console.log(to)
       this.page = parseInt(to.params.page) + 1
-      this.abyatArray = this.loadAbyat(this.page)
+      this.loadAbyat(this.page)
     }
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.loadAbyat()
+    })
   }
 }
 </script>
