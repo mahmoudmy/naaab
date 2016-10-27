@@ -1,8 +1,12 @@
 <template>
-  <div class="beyt">
-    <div class="mesra">{{ poem.m1 }}</div>
-    <div class="mesra">{{ poem.m2 }}</div>
-    <div>{{ poem.sh }}</div>
+  <div class="card is-fullwidth">
+    <div class="card-content">
+      <div class="mesra">{{ poem.m1 }}</div>
+      <div class="mesra">{{ poem.m2 }}</div>
+    </div>
+    <div class="card-footer">
+      <router-link :to="'/sh/' + poem.sh + '/1'" class="card-footer-item">{{ poem.sh }}</router-link>
+    </div>
   </div>
 </template>
 
@@ -15,11 +19,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.beyt {
-  width: 700px;
+.beyt .card-content {
+  line-height: 36px;
+}
+.mesra {
+  font-size: 18px;
   text-align: center;
-  background-color: #ccc;
-  margin: 20px auto;
-  padding: 10px
 }
 </style>

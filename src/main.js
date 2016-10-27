@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import 'bulma/css/bulma.css'
+
 import App from './App'
 
 Vue.use(VueRouter)
@@ -7,7 +9,7 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
     { path: '/:page', component: App },
-    { path: '/', redirect: '/1' }
+    { path: '/sh/:sh/:page', component: App }
   ],
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }
