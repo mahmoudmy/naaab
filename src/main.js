@@ -8,6 +8,7 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes: [
+    { path: '/', component: App },
     { path: '/:page', component: App },
     { path: '/sh/:sh/:page', component: App }
   ],

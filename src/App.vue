@@ -49,11 +49,25 @@ export default {
   },
   data: function () {
     return {
-      nextPageLink: this.$route.params.sh ? '/sh/' + this.$route.params.sh + '/' + (parseInt(this.$route.params.page) + 1) : '/' + (parseInt(this.$route.params.page) + 1),
-      prevPageLink: this.$route.params.sh ? '/sh/' + this.$route.params.sh + '/' + (parseInt(this.$route.params.page) - 1) : '/' + (parseInt(this.$route.params.page) - 1),
       abyatArray: [],
       sh: this.$route.params.sh,
       page: this.$route.params.page || 1
+    }
+  },
+  computed: {
+    nextPageLink: function () {
+      if (this.sh) {
+        return '/sh/' + this.sh + '/' + (parseInt(this.page) + 1)
+      } else {
+        return '/' + (parseInt(this.page) + 1)
+      }
+    },
+    prevPageLink: function () {
+      if (this.sh) {
+        return '/sh/' + this.sh + '/' + (parseInt(this.page) - 1)
+      } else {
+        return '/' + (parseInt(this.page) - 1)
+      }
     }
   },
   components: {
@@ -61,11 +75,9 @@ export default {
   },
   watch: {
     '$route' (to, from) {
-      this.page = to.params.page
+      this.page = to.params.page || 1
       this.sh = to.params.sh
-      this.nextPageLink = to.params.sh ? '/sh/' + to.params.sh + '/' + (parseInt(to.params.page) + 1) : '/' + (parseInt(to.params.page) + 1)
-      this.prevPageLink = to.params.sh ? '/sh/' + to.params.sh + '/' + (parseInt(to.params.page) - 1) : '/' + (parseInt(to.params.page) - 1)
-      this.loadAbyat(to.params.page, to.params.sh)
+      this.loadAbyat(this.page, this.sh)
     }
   },
   beforeRouteEnter (to, from, next) {
