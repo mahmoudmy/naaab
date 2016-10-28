@@ -4,8 +4,8 @@
 			<div class="column">
 				<router-link to="/1" class="button is-warning is-medium">
 					<span class="icon">
-            <svg viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round"
-              stroke-linejoin="round" stroke-width="6.25%">
+            <svg viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round"
+              stroke-linejoin="round" stroke-width="9%">
               <path d="M2 30 L30 2 M30 30 L2 2"></path>
             </svg>
           </span>
@@ -114,4 +114,13 @@ export default {
 		margin-right: -2px;
 		margin-left: 4px;
 	}
+	
+	.content a.icon, .content a.icon:visited {
+		border: none;
+    color: #999;
+	}
+
+  .content a.icon:hover {
+    color: #000;
+  }
 </style>

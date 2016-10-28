@@ -19,11 +19,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.beyt .card-content {
-  line-height: 36px;
-}
-.mesra {
-  font-size: 18px;
-  text-align: center;
-}
+
 </style>
