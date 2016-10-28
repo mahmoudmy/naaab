@@ -32,6 +32,7 @@ export default {
   name: 'app',
   methods: {
     loadAbyat (page, sh) {
+      window.scroll(0, 0)
       this.abyatArray = []
       const shQuery = sh ? '?query={"sh":"' + sh + '"}' : ''
       request

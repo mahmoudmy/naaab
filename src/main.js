@@ -11,11 +11,7 @@ const router = new VueRouter({
     { path: '/', component: App },
     { path: '/:page', component: App },
     { path: '/sh/:sh/:page', component: App }
-  ],
-  scrollBehavior (to, from, savedPosition) {
-    return { x: 0, y: 0 }
-  },
-  mode: 'history'
+  ]
 })
 
 /* eslint-disable no-new */
