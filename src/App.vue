@@ -32,6 +32,7 @@ export default {
   name: 'app',
   methods: {
     loadAbyat (page, sh) {
+      page = page || 1
       window.scroll(0, 0)
       this.abyatArray = []
       const shQuery = sh ? '?query={"sh":"' + sh + '"}' : ''
@@ -43,7 +44,8 @@ export default {
         if (err) {
           console.log('Connection Error!')
         } else {
-          this.abyatArray = res.body
+          this.abyatArray = res.body.list
+          this.totalItems = res.body.totalItems
         }
       })
     }
@@ -51,6 +53,7 @@ export default {
   data: function () {
     return {
       abyatArray: [],
+      totalItems: 0,
       sh: this.$route.params.sh,
       page: this.$route.params.page || 1
     }
