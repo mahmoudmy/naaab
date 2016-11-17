@@ -20,12 +20,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+
 	.abyat {
 		min-height: 100vh;
 	}
 	
 	.beyt .card {
-		opacity: .8;
+	color: #212529;
+	}
+	
+	.beyt .card-footer-item {
+		color: #868e96;
+		font-weight: 600;
+	}
+	
+	.beyt .card-footer-item:hover {
+		color: #212529;
 	}
 	
 	.beyt .card-content {
