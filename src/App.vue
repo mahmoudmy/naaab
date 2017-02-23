@@ -25,8 +25,7 @@
 import request from 'superagent'
 import Abyat from './components/Abyat'
 
-const apiUrl = 'https://baas.kinvey.com/appdata/kid_Bywohawkg/abyat'
-const token = 'Basic a2lkX0J5d29oYXdrZzozZmZhNTQwMTAwNDk0ZTlkYjY3NTRjZDQ5NDllZTUyMA=='
+const apiUrl = 'https://naaab.herokuapp.com/abyat'
 
 export default {
   name: 'app',
@@ -35,11 +34,11 @@ export default {
       page = page || 1
       window.scroll(0, 0)
       this.abyatArray = []
-      const shQuery = sh ? '?query={"sh":"' + sh + '"}' : ''
       request
-      .get(apiUrl + shQuery)
-      .query({ limit: 20, skip: (page - 1) * 20 })
-      .set('Authorization', token)
+      .get(apiUrl)
+      // .withCredentials()
+      .query({ page: page, sh: sh })
+      // .set('Authorization', token)
       .end((err, res) => {
         if (err) {
           console.log('Connection Error!')
