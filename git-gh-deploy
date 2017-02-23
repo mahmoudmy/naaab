@@ -1,2 +1,4 @@
-git add dist && git commit -m "meeeeeeeeessssssssssssaaaaaaaaaaaaaaggggggggggeeeeee"
-git subtree push --prefix dist origin gh-pages
+mv dist docs
+git add .
+git commit
+git push origin master
