@@ -1,6 +1,6 @@
 <template>
 	<div class="columns is-multiline abyat">
-		<div class="column is-6 beyt" v-for="beyt in abyatArray" :key="beyt._id">
+		<div class="column is-narrow beyt" v-for="beyt in abyatArray" :key="beyt._id">
 			<beyt :poem="beyt"></beyt>
 		</div>
 	</div>
@@ -23,6 +23,10 @@ export default {
 
 	.abyat {
 		min-height: 100vh;
+		-webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
 	}
 	
 	.beyt .card {
