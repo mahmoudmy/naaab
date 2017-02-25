@@ -1,6 +1,7 @@
 npm run build
 rm -rf docs
 mv dist docs
-git add .
+echo naaab.ir >> docs/CNAME
+git add --all
 git commit
 git push origin master
