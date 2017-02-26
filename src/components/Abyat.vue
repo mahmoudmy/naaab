@@ -22,7 +22,7 @@ export default {
 <style>
 
 	.abyat {
-		min-height: 100vh;
+		min-height: calc(100vh - 100px);
 		-webkit-align-items: center;
    align-items: center;
    -webkit-justify-content: center;
