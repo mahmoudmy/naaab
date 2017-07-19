@@ -1,5 +1,7 @@
 # ابیات ناب پارسی
 
+Check out new repository (SSR using nuxt.js): https://github.com/mahmoudmy/naaab.ir
+
 > A Vue.js project
 
 ## Build Setup
